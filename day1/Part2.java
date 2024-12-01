@@ -30,7 +30,7 @@ public class Part2{
         }
 
         long wynik = 0;
-        int counter = 0;
+        int counter;
         for(int i = 0; i<tab1.length;i++){
             counter = 0;
            for(int j = 0; j<tab1.length;j++){
