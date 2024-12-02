@@ -31,11 +31,8 @@ public class Part1{
         boolean rises;
 
         for(ArrayList<Integer> a : arr1){
-            if(a.get(0)-a.get(1)>0){
-                rises = false;
-            }else{
-                rises = true;
-            }
+            rises = a.get(0)<a.get(1);
+            
             for(int i = 1; i<a.size();i++){
                 if(Math.abs(a.get(i)-a.get(i-1))>3||Math.abs(a.get(i)-a.get(i-1))==0){
                     counter--;
