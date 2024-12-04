@@ -24,51 +24,20 @@ try {
     } catch (FileNotFoundException e) {
     }
 
-    
+    int[] dr = {-1,0,1};
+    int[] dc = {-1,0,1};
     int counter = 0;
     for (int i = 0; i < input.size(); i++) {
         for (int j = 0; j < input.get(i).size(); j++) { 
             if(input.get(i).get(j)=='X'){
-                try {  
-                    //U                  
-                    if(input.get(i-1).get(j)=='M'&&input.get(i-2).get(j)=='A'&&input.get(i-3).get(j)=='S')counter++;
-                } catch (Exception e) {
-                }
-                try { 
-                    //UR                  
-                    if(input.get(i-1).get(j+1)=='M'&&input.get(i-2).get(j+2)=='A'&&input.get(i-3).get(j+3)=='S')counter++;
-                } catch (Exception e) {
-                }
-                try { 
-                    //R                  
-                    if(input.get(i).get(j+1)=='M'&&input.get(i).get(j+2)=='A'&&input.get(i).get(j+3)=='S')counter++;
-                } catch (Exception e) {
-                }
-                    try { 
-                    //DR                  
-                    if(input.get(i+1).get(j+1)=='M'&&input.get(i+2).get(j+2)=='A'&&input.get(i+3).get(j+3)=='S')counter++;
-                } catch (Exception e) {
-                }
-                    try { 
-                    //D                  
-                    if(input.get(i+1).get(j)=='M'&&input.get(i+2).get(j)=='A'&&input.get(i+3).get(j)=='S')counter++;
-                } catch (Exception e) {
-                }
-                    try { 
-                    //DL                  
-                    if(input.get(i+1).get(j-1)=='M'&&input.get(i+2).get(j-2)=='A'&&input.get(i+3).get(j-3)=='S')counter++;
-                } catch (Exception e) {
-                }
-                    try { 
-                    //L                  
-                    if(input.get(i).get(j-1)=='M'&&input.get(i).get(j-2)=='A'&&input.get(i).get(j-3)=='S')counter++;
-                } catch (Exception e) {
-                }
-                    try { 
-                    //UL                  
-                    if(input.get(i-1).get(j-1)=='M'&&input.get(i-2).get(j-2)=='A'&&input.get(i-3).get(j-3)=='S')counter++;
-                } catch (Exception e) {
-                }                   
+                for(int r:dr){
+                    for(int c:dc){
+                        try {                                            
+                            if(input.get(i+1*r).get(j+1*c)=='M'&&input.get(i+2*r).get(j+2*c)=='A'&&input.get(i+3*r).get(j+3*c)=='S')counter++;
+                        } catch (Exception e) {
+                        }
+                    }
+                }                  
             }
         }
     }
